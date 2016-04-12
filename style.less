@@ -1,0 +1,64 @@
+@import 'theme';
+@import 'grid';
+
+aside {
+  .Cols(1);
+  min-height: 500 * @toRem;
+  background-color: #eee;
+  h1 {
+    color: @mainColor;
+  }
+  
+  &:hover {
+    background-color: @defaultThemeColor;
+  }
+}
+
+  article {
+    .Cols(3);
+    min-height: 500 * @toRem;
+    background-color: #ddd;
+  }
+
+
+.RoundedCorners( @radius: 0 ) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+
+//mixins
+.YellowBorder { border-color: green; }
+.BigBorder { border-width: 10px; }
+.SolidBorder { border-style: solid; }
+.DashedBorder { border-sytle: dashed; }
+
+#button1 {
+  .YellowBorder;
+  .DashedBorder;
+}
+
+#button2 {
+  background-color: @mainColor + #444; //lessons saturation of color by 444 hex.
+  .RoundedCorners(25px);
+  .YellowBorder;
+  .SolidBorder;
+  .BigBorder;
+}
+
+#button3 {
+  .RoundedCorners(50%);
+  border-color: @borderColor;
+  .SolidBorder;
+  .BigBorder;
+}
+
+.big-button {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background: @mainColor;
+  margin: 30px;
+}
+

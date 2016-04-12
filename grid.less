@@ -1,0 +1,25 @@
+@basePx: 16;
+@toRem: (1 / @basePx) + 0rem;
+@toEm: ( 1/ @basePx) + 0em;
+@defaultWidth: 1200 * @toRem;
+@defaultColSpan: 4;
+@defaultTotalCols: 12;
+
+.Row (@width: @defaultWidth) {
+  max-width: @width;
+  width: 100%;
+  margin: 0 auto;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.Cols ( @colSpan: @defaultColSpan; @totalCols: @defaultTotalCols) {
+  width: (@colSpan * ( 100 / @totalCols)) + 0%;
+  float: left;
+}
